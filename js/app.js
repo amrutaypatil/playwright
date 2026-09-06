@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateInterviewPages();
     updateRepeatedQuestions();
     updateVaultPages();
+    initialiseVaultTopicCards();
 
     initialiseInterviewRows();
     initialiseCompanyTabs();
@@ -536,7 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Dashboard",
 
             repeated:
-                "High-Frequency Topics",
+                "Repeated Questions",
 
             playwright:
                 "Playwright",
@@ -1229,33 +1230,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateVaultPages() {
 
+        // IMPORTANT:
+        // These IDs must match the actual containers in pages/*.html.
+        // Keeping this mapping explicit makes every GitHub Pages route
+        // render the correct vault data instead of leaving "Loading..."
+        // on screen.
         renderTopicGrid(
             "playwright",
-            "playwrightTopicGrid"
+            "playwrightTopics"
         );
 
 
         renderTopicGrid(
             "javascript",
-            "javascriptTopicGrid"
+            "javascriptTopics"
         );
 
 
         renderTopicGrid(
             "programs",
-            "programsTopicGrid"
+            "programList"
         );
 
 
         renderTopicGrid(
             "scenarios",
-            "scenarioTopicGrid"
-        );
-
-
-        renderTopicGrid(
-            "scenarios",
-            "scenariosTopicGrid"
+            "scenarioList"
         );
 
 
