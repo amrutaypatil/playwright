@@ -92,22 +92,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function initialiseTheme() {
 
-        const savedTheme =
-            localStorage.getItem(
+        let savedTheme = null;
+
+        try {
+            savedTheme = localStorage.getItem(
                 "playwright-vault-theme"
             );
+        } catch (error) {
+            console.warn(
+                "Unable to read saved theme preference:",
+                error
+            );
+        }
 
         const theme =
             savedTheme === "light" || savedTheme === "dark"
                 ? savedTheme
                 : "dark";
 
-        document.documentElement.setAttribute(
-            "data-theme",
-            theme
-        );
-
-        updateThemeIcon();
+        setTheme(theme);
 
     }
 
@@ -146,38 +149,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    if (themeToggle) {
+    function setTheme(theme) {
 
-        themeToggle.addEventListener(
-            "click",
-            () => {
+        const nextTheme =
+            theme === "light" ? "light" : "dark";
 
-                const currentTheme =
-                    document.documentElement.getAttribute("data-theme") ||
-                    "dark";
-
-                const nextTheme =
-                    currentTheme === "dark"
-                        ? "light"
-                        : "dark";
-
-                document.documentElement.setAttribute(
-                    "data-theme",
-                    nextTheme
-                );
-
-                localStorage.setItem(
-                    "playwright-vault-theme",
-                    nextTheme
-                );
-
-
-                updateThemeIcon();
-
-            }
+        document.documentElement.setAttribute(
+            "data-theme",
+            nextTheme
         );
 
+        document.body.classList.toggle(
+            "light-theme",
+            nextTheme === "light"
+        );
+
+        try {
+            localStorage.setItem(
+                "playwright-vault-theme",
+                nextTheme
+            );
+        } catch (error) {
+            console.warn(
+                "Unable to save theme preference:",
+                error
+            );
+        }
+
+        updateThemeIcon();
+
     }
+
+
+    /*
+     * Use pointerup instead of relying only on click.
+     * This works consistently with mouse, touch and mobile
+     * browsers while keeping the theme state in one place.
+     */
+    document.addEventListener(
+        "pointerup",
+        event => {
+
+            const button =
+                event.target.closest("#themeToggle");
+
+            if (!button) {
+                return;
+            }
+
+            const currentTheme =
+                document.documentElement.getAttribute("data-theme") ||
+                "dark";
+
+            setTheme(
+                currentTheme === "dark"
+                    ? "light"
+                    : "dark"
+            );
+
+        }
+    );
 
 
     /* ========================================================
@@ -2740,29 +2771,69 @@ document.addEventListener("DOMContentLoaded", () => {
         results
     ) {
 
-        const searchSection =
+        let searchSection =
             document.getElementById(
                 "searchSection"
             );
 
 
-        const resultsContainer =
+        let resultsContainer =
             document.getElementById(
                 "searchResults"
             );
 
 
-        const summary =
+        let summary =
             document.getElementById(
                 "searchSummary"
             );
 
 
-        if (
-            !searchSection ||
-            !resultsContainer
-        ) {
-            return;
+        /*
+         * Every page has the global search box, but only the
+         * dashboard originally contained the search-results section.
+         * Create it automatically on inner pages so searching from
+         * Playwright / JavaScript / API / SQL etc. works as expected.
+         */
+        if (!searchSection || !resultsContainer) {
+
+            const content =
+                document.querySelector(".content");
+
+            if (!content) {
+                return;
+            }
+
+            let dynamicSearch =
+                document.getElementById("searchSection");
+
+            if (!dynamicSearch) {
+
+                dynamicSearch =
+                    document.createElement("section");
+
+                dynamicSearch.id = "searchSection";
+                dynamicSearch.className = "search-page";
+
+                dynamicSearch.innerHTML = `
+                    <div class="page-header">
+                        <div>
+                            <div class="eyebrow">SEARCH</div>
+                            <h1>Search Results</h1>
+                            <p id="searchSummary">Search across your interview vault.</p>
+                        </div>
+                    </div>
+                    <div id="searchResults"></div>
+                `;
+
+                content.appendChild(dynamicSearch);
+
+            }
+
+            searchSection = dynamicSearch;
+            resultsContainer =
+                dynamicSearch.querySelector("#searchResults");
+
         }
 
 
