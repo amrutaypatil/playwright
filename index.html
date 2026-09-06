@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Playwright QA Interview Vault
+    </title>
+
+    <meta
+        name="description"
+        content="Personal Playwright, JavaScript and QA Automation interview preparation vault built from real interview questions."
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                PW
+            </div>
+
+            <div>
+
+                <div class="brand-title">
+                    Interview Vault
+                </div>
+
+                <div class="brand-subtitle">
+                    Playwright + JavaScript
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <!-- OVERVIEW -->
+
+            <div class="nav-label">
+                OVERVIEW
+            </div>
+
+
+            <a
+                href="#dashboard"
+                class="nav-link active"
+                data-section="dashboard"
+            >
+
+                <span>⌂</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="#repeated"
+                class="nav-link"
+                data-section="repeated"
+            >
+
+                <span>🔥</span>
+
+                High-Frequency Topics
+
+            </a>
+
+
+            <!-- PREPARATION -->
+
+            <div class="nav-label">
+                PREPARATION
+            </div>
+
+
+            <a
+                href="pages/playwright.html"
+                class="nav-link"
+            >
+
+                <span>🎭</span>
+
+                Playwright
+
+            </a>
+
+
+            <a
+                href="pages/javascript.html"
+                class="nav-link"
+            >
+
+                <span>JS</span>
+
+                JavaScript
+
+            </a>
+
+
+            <a
+                href="pages/coding.html"
+                class="nav-link"
+            >
+
+                <span>⌘</span>
+
+                JS Programs
+
+            </a>
+
+
+            <a
+                href="pages/scenarios.html"
+                class="nav-link"
+            >
+
+                <span>⚡</span>
+
+                Real Scenarios
+
+            </a>
+
+
+            <!-- KNOWLEDGE -->
+
+            <div class="nav-label">
+                KNOWLEDGE
+            </div>
+
+
+            <a
+                href="pages/api.html"
+                class="nav-link"
+            >
+
+                <span>⇄</span>
+
+                API Testing
+
+            </a>
+
+
+            <a
+                href="pages/sql.html"
+                class="nav-link"
+            >
+
+                <span>▤</span>
+
+                SQL
+
+            </a>
+
+
+            <a
+                href="pages/automation.html"
+                class="nav-link"
+            >
+
+                <span>⚙</span>
+
+                Automation
+
+            </a>
+
+
+            <!-- INTERVIEWS -->
+
+            <div class="nav-label">
+                MY INTERVIEWS
+            </div>
+
+
+            <a
+                href="pages/interviews.html"
+                class="nav-link"
+            >
+
+                <span>▣</span>
+
+                Interview History
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div>
+                Personal Knowledge Base
+            </div>
+
+            <small>
+                Built for interview preparation
+            </small>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <div class="breadcrumb">
+
+                <span>
+                    Interview Vault
+                </span>
+
+                <strong>
+                    /
+                </strong>
+
+                <span id="currentSection">
+                    Dashboard
+                </span>
+
+            </div>
+
+
+            <div class="top-actions">
+
+
+                <div class="search">
+
+                    <span>
+                        ⌕
+                    </span>
+
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search questions..."
+                        autocomplete="off"
+                        aria-label="Search interview questions"
+                    >
+
+
+                    <kbd>
+                        ⌘ K
+                    </kbd>
+
+                </div>
+
+
+                <button
+                    class="icon-button"
+                    id="themeToggle"
+                    type="button"
+                    title="Toggle theme"
+                    aria-label="Toggle theme"
+                >
+                    ☾
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div class="content">
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+            <section
+                id="dashboard"
+                class="page-section active-section"
+            >
+
+
+                <!-- HERO -->
+
+                <div class="hero">
+
+
+                    <div class="hero-copy">
+
+
+                        <div class="eyebrow">
+                            PERSONAL INTERVIEW KNOWLEDGE BASE
+                        </div>
+
+
+                        <h1>
+
+                            Playwright QA<br>
+
+                            <span>
+                                Interview Vault
+                            </span>
+
+                        </h1>
+
+
+                        <p>
+
+                            A personal preparation system built from
+                            questions actually asked in interviews,
+                            with answers, examples, programs and
+                            real-world scenarios.
+
+                        </p>
+
+
+                        <div class="hero-actions">
+
+
+                            <button
+                                class="primary-button"
+                                type="button"
+                                data-go="repeated"
+                            >
+
+                                🔥 Start with high-frequency topics
+
+                            </button>
+
+
+                            <a
+                                class="secondary-button"
+                                href="pages/playwright.html"
+                            >
+
+                                🎭 Playwright essentials
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TERMINAL -->
+
+                    <div class="hero-terminal">
+
+
+                        <div class="terminal-top">
+
+                            <span class="dot red"></span>
+
+                            <span class="dot yellow"></span>
+
+                            <span class="dot green"></span>
+
+
+                            <span class="terminal-title">
+                                interview-prep.js
+                            </span>
+
+                        </div>
+
+
+                        <div class="terminal-body">
+
+
+                            <div>
+
+                                <span class="purple">
+                                    const
+                                </span>
+
+                                <span class="white">
+                                    goal
+                                </span>
+
+                                <span class="muted">
+                                    =
+                                </span>
+
+                                <span class="green">
+                                    "Get interview ready"
+                                </span>;
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="purple">
+                                    const
+                                </span>
+
+                                <span class="white">
+                                    focus
+                                </span>
+
+                                <span class="muted">
+                                    = [
+                                </span>
+
+                            </div>
+
+
+                            <div class="indent">
+
+                                <span class="green">
+                                    "Playwright"
+                                </span>,
+
+                            </div>
+
+
+                            <div class="indent">
+
+                                <span class="green">
+                                    "JavaScript"
+                                </span>,
+
+                            </div>
+
+
+                            <div class="indent">
+
+                                <span class="green">
+                                    "API Testing"
+                                </span>,
+
+                            </div>
+
+
+                            <div class="indent">
+
+                                <span class="green">
+                                    "CI/CD"
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="muted">
+                                    ];
+                                </span>
+
+                            </div>
+
+
+                            <br>
+
+
+                            <div>
+
+                                <span class="blue">
+                                    prepare
+                                </span>
+
+                                <span class="muted">
+                                    (
+                                </span>
+
+                                <span class="white">
+                                    focus
+                                </span>
+
+                                <span class="muted">
+                                    );
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     STATS
+                ================================================== -->
+
+                <div class="stats">
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            0
+                        </div>
+
+                        <div class="stat-label">
+                            Real Interviews
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            0
+                        </div>
+
+                        <div class="stat-label">
+                            Questions Captured
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            0
+                        </div>
+
+                        <div class="stat-label">
+                            Repeated Topics
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            0%
+                        </div>
+
+                        <div class="stat-label">
+                            Questions Mastered
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     REPEATED QUESTIONS
+                ================================================== -->
+
+                <div class="section-heading">
+
+
+                    <div>
+
+                        <div class="eyebrow red">
+                            HIGH FREQUENCY
+                        </div>
+
+                        <h2>
+                            Questions I keep seeing
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="text-button"
+                        type="button"
+                        data-go="repeated"
+                    >
+
+                        View all →
+
+                    </button>
+
+                </div>
+
+
+                <div class="question-grid">
+
+
+                    <article class="question-card">
+
+                        <div class="question-meta">
+
+                            <span class="tag blue-tag">
+                                TOPIC
+                            </span>
+
+                            <span>
+                                Loading...
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Interview topics
+                        </h3>
+
+
+                        <p>
+
+                            Your repeated interview topics
+                            will appear here automatically.
+
+                        </p>
+
+
+                        <div class="companies">
+
+                            Add interview data to see frequency.
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     INTERVIEW HISTORY
+                ================================================== -->
+
+                <div class="section-heading interview-heading">
+
+
+                    <div>
+
+                        <div class="eyebrow">
+                            REAL INTERVIEW DATA
+                        </div>
+
+                        <h2>
+                            My interview history
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        class="text-button"
+                        href="pages/interviews.html"
+                    >
+
+                        View all →
+
+                    </a>
+
+                </div>
+
+
+                <div class="interview-list">
+
+
+                    <div class="empty-state">
+
+                        <p>
+                            Loading interview history...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 REPEATED QUESTIONS
+            ================================================== -->
+
+            <section
+                id="repeated"
+                class="page-section"
+            >
+
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <div class="eyebrow red">
+                            MOST IMPORTANT
+                        </div>
+
+
+                        <h1>
+                            Repeated Questions
+                        </h1>
+
+
+                        <p>
+
+                            Questions and topics that appeared
+                            across multiple interviews. These are
+                            your highest-priority preparation areas.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="priority-banner">
+
+
+                    <div class="priority-icon">
+                        🔥
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Interview strategy
+                        </strong>
+
+
+                        <p>
+
+                            Master repeated topics first.
+                            The more interviews a topic appears in,
+                            the higher its preparation priority.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="repeat-table">
+
+
+                    <div class="table-head">
+
+                        <span>
+                            TOPIC
+                        </span>
+
+                        <span>
+                            INTERVIEWS
+                        </span>
+
+                        <span>
+                            PRIORITY
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div>
+
+                            <strong>
+                                Loading topics...
+                            </strong>
+
+                            <small>
+                                Interview data will appear here.
+                            </small>
+
+                        </div>
+
+
+                        <div>
+                            —
+                        </div>
+
+
+                        <div class="priority">
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SEARCH RESULTS
+            ================================================== -->
+
+            <section
+                id="searchSection"
+                class="search-page"
+            >
+
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <div class="eyebrow">
+                            SEARCH
+                        </div>
+
+
+                        <h1>
+                            Search Results
+                        </h1>
+
+
+                        <p id="searchSummary">
+
+                            Search across your interview vault.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="searchResults"></div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="footer">
+
+
+            <span>
+                Playwright QA Interview Vault
+            </span>
+
+
+            <span>
+                Built for preparation · Updated as interviews happen
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     QUESTION MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="questionModal"
+    aria-hidden="true"
+>
+
+
+    <div class="modal-backdrop"></div>
+
+
+    <div
+        class="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalQuestion"
+    >
+
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <div class="eyebrow red">
+            INTERVIEW QUESTION
+        </div>
+
+
+        <h2 id="modalQuestion">
+            Question
+        </h2>
+
+
+        <div
+            class="modal-meta"
+            id="modalMeta"
+        ></div>
+
+
+        <div class="answer-placeholder">
+
+
+            <div class="answer-title">
+                📝 My Answer / Notes
+            </div>
+
+
+            <p>
+
+                This is where I will add my own
+                interview-ready answer, explanation,
+                example and follow-up questions.
+
+            </p>
+
+
+            <div class="answer-tip">
+
+
+                <strong>
+                    Preparation tip:
+                </strong>
+
+
+                Don't just memorize the definition.
+                Prepare a 30-second answer, a practical
+                example and possible follow-up questions.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     DATA
+     
+     IMPORTANT:
+     Load data BEFORE app.js.
+========================================================= -->
+
+<script src="data.js"></script>
+
+<script src="data/interviews.js"></script>
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
