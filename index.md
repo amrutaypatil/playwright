@@ -12,15 +12,15 @@ A personal knowledge base for interview preparation.
 
 ---
 
-## Playwright
+## 🎭 Playwright
 
-UI automation, framework architecture, Page Object Model, locators, waits, fixtures, multi-tabs, frames and debugging.
+UI automation, framework architecture, Page Object Model, locators, waits, fixtures, multi-tabs, frames, debugging and Playwright framework design.
 
 [Open Playwright Questions](playwright.md)
 
 ---
 
-## API Testing
+## 🔌 API Testing
 
 Postman, REST APIs, HTTP methods, authentication, scripting and Playwright API automation.
 
@@ -28,7 +28,7 @@ Postman, REST APIs, HTTP methods, authentication, scripting and Playwright API a
 
 ---
 
-## SQL
+## 🗄️ SQL
 
 Joins, aggregations, subqueries, indexing and intermediate SQL interview scenarios.
 
@@ -36,7 +36,7 @@ Joins, aggregations, subqueries, indexing and intermediate SQL interview scenari
 
 ---
 
-## CI/CD
+## ⚙️ CI/CD
 
 GitHub Actions, Jenkins, parallel execution, pipelines, reports and automation execution.
 
@@ -44,37 +44,38 @@ GitHub Actions, Jenkins, parallel execution, pipelines, reports and automation e
 
 ---
 
-## Functional / Manual Testing
+## 🧪 Functional / Manual Testing
 
-Test scenarios, test-case design, boundary value analysis, equivalence partitioning, defects, regression and Agile.
+Test scenarios, test-case design, boundary value analysis, equivalence partitioning, defects, regression testing and Agile.
 
 [Open Functional Testing Questions](functional-testing.md)
 
 ---
 
-## How to Use
+## How to Use This Vault
 
 ### Before an interview
 
-Read the question.
+Read the question first.
 
 Try to answer it yourself.
 
 Then open the answer.
 
+---
+
 ### After an interview
 
-Add the new question directly to the relevant Markdown file.
+Add the new question to the appropriate `.md` file.
 
 Example:
 
-````markdown
 <details>
 <summary>How do you handle a new tab in Playwright?</summary>
 
 ### Answer
 
-I wait for the new page event before performing the action that opens the tab.
+I wait for the new page event before performing the action that opens the new tab.
 
 ```javascript
 const newPagePromise = context.waitForEvent('page');
@@ -86,13 +87,24 @@ await page.getByRole('link', {
 const newPage = await newPagePromise;
 
 await newPage.waitForLoadState();
-````
+```
 
 </details>
-```
 
 ---
 
+## Interview Rule
+
 > **Question first. Answer second.**
 
-This repository is intentionally Markdown-first so new interview questions can be added quickly from GitHub without modifying application code.
+This repository is intentionally Markdown-first.
+
+No database.
+
+No CMS.
+
+No JavaScript data file.
+
+No complex application code.
+
+Just questions, answers and interview preparation.
